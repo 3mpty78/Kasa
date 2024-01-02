@@ -1,0 +1,70 @@
+@import "../lib";
+
+#home {
+    .imageContainer {
+        position: relative;
+        width: 100%;
+        height: 223px;
+        border-radius: $S;
+        overflow: hidden;
+        @include colCenter();
+
+        &:hover img {
+            transform: scale(1.5);
+        }
+
+        img {
+            position: absolute;
+            @include fullSize();
+            object-fit: cover;
+            filter: brightness(0.75);
+            transition: transform 15s ease;
+        }
+
+        p {
+            z-index: 1;
+            font-size: 48px;
+            color: $LIGHT;
+        }
+    }
+
+    .logements {
+        background: $GRAY;
+        margin-bottom: $M;
+        height: auto;
+        width: 100%;
+        padding: $M;
+        border-radius: $S;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: $M;
+
+        &__item {
+            aspect-ratio: 1/1;
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            align-items: flex-end;
+            position: relative;
+
+            &:hover img {
+                transform: scale(1.5);
+            }
+
+            img {
+                @include fullSize();
+                position: absolute;
+                object-fit: cover;
+                filter: brightness(0.75);
+                transition: transform 15s ease;
+            }
+
+            p {
+                z-index: 1;
+                padding: 20px;
+                font-size: 18px;
+                color: $LIGHT;
+            }
+        }
+    }
+}

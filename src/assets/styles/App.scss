@@ -1,8 +1,48 @@
 @import "./lib";
+@import "./pages/homepage";
 
-#root {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 2rem;
-    text-align: center;
+li {
+    list-style-type: none;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+main {
+    position: relative;
+    padding: $M $L 0;
+    @include colCenter();
+    gap: $M;
+}
+header {
+    width: 100%;
+    @include rowCenter();
+    justify-content: space-between;
+
+    nav ul {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: $M;
+
+        a {
+            color: $ACCENT;
+            font-size: 20px;
+            font-weight: 500;
+
+            &:hover {
+                text-decoration: underline;
+                text-underline-position: under;
+            }
+        }
+    }
+}
+
+footer {
+    width: 100%;
+    padding: $M 0 $S;
+    @include colCenter();
+    gap: $S;
+    background: $DARK;
+    color: $LIGHT;
 }

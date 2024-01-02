@@ -16,10 +16,11 @@ export default function Homepage() {
                 <Navbar />
                 <div className="imageContainer">
                     <img src={beach} alt="Beach landscape banner image" />
+                    <p>Chez vous, partout et ailleurs</p>
                 </div>
-                <section id="logements__container">
+                <section className="logements">
                     {data.map((appartement, index) => (
-                        <Link key={index} to={"/appartement/:id"}>
+                        <Link className="logements__item" key={index} to={"/"}>
                             <img
                                 src={appartement.cover}
                                 alt={`${appartement.title}'s cover picture`}
@@ -28,8 +29,8 @@ export default function Homepage() {
                         </Link>
                     ))}
                 </section>
-                <Footer />
             </main>
+            <Footer />
         </>
     );
 }

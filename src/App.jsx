@@ -1,6 +1,5 @@
-import "./assets/styles/App.scss";
-import Navbar from "./components/Navbar";
 import Homepage from "./pages/Homepage";
+import "./assets/styles/app.scss";
 
 function App() {
     return (

@@ -25,6 +25,7 @@ export default function Navbar() {
                     {navLinks.map((link, index) => (
                         <li key={index}>
                             <Link to={link.path}>{link.name}</Link>
+                            <div id="border"></div>
                         </li>
                     ))}
                 </ul>

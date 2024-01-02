@@ -9,16 +9,11 @@
         overflow: hidden;
         @include colCenter();
 
-        &:hover img {
-            transform: scale(1.5);
-        }
-
         img {
             position: absolute;
             @include fullSize();
             object-fit: cover;
             filter: brightness(0.75);
-            transition: transform 15s ease;
         }
 
         p {

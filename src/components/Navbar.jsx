@@ -8,7 +8,7 @@ import logo from "../assets/images/LOGO.svg";
 const navLinks = [
     {
         name: "Accueil",
-        path: "home",
+        path: "/",
     },
     {
         name: "A propos",

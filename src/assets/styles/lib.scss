@@ -1,9 +1,44 @@
 // COLORS
+$LIGHT: #fff;
+$DARK: #000;
+$ACCENT: #ff6060;
 
 // SIZES
+$S: 0px;
+$M: 0px;
+$L: 0px;
 
 // FONTS
+@font-face {
+    font-family: Montserrat;
+    src: url(../fonts/MONTSERRAT.TTF);
+}
+
+// RESET
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 // MIXINS
+@mixin fullSize {
+    width: 100%;
+    height: 100%;
+}
+@mixin colCenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+@mixin rowCenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
 
 // GLOBAL STYLES

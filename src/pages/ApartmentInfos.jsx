@@ -1,8 +1,10 @@
 import React from "react";
-import Apartment from "../components/Apartment";
-import data from "../assets/logements.json";
 import { useParams } from "react-router-dom";
 import NotFound from "./NotFound";
+import Apartment from "../components/Apartment";
+
+// Import du JSON
+import data from "../assets/logements.json";
 
 export default function ApartmentInfos() {
     const { id } = useParams();

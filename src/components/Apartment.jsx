@@ -16,6 +16,20 @@ export default function Appartement({
     description,
     equipments,
 }) {
+    const [currentIndex, setIndex] = useState(0);
+
+    function nextSlide() {
+        setIndex((previousIndex) =>
+            previousIndex === pictures.length - 1 ? 0 : previousIndex + 1
+        );
+    }
+
+    function previousSlide() {
+        setIndex((previousIndex) =>
+            previousIndex === 0 ? pictures.length - 1 : previousIndex - 1
+        );
+    }
+
     return (
         <>
             <Navbar />
@@ -23,15 +37,26 @@ export default function Appartement({
                 {/* CREACTION DU CAROUSEL */}
 
                 <section className="carousel">
-                    <img className="arrow left" src={arrow} alt="Left arrow" />
                     <img
+                        onClick={previousSlide}
+                        className="arrow left"
+                        src={arrow}
+                        alt="Left arrow"
+                    />
+                    <img
+                        onClick={nextSlide}
                         className="arrow right"
                         src={arrow}
                         alt="Right arrow"
                     />
 
                     {pictures.map((image, index) => (
-                        <figure key={index}>
+                        <figure
+                            key={index}
+                            style={{
+                                display:
+                                    index === currentIndex ? "block" : "none",
+                            }}>
                             <img
                                 src={image}
                                 alt={`Preview image number ${index + 1}`}

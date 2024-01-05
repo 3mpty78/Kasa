@@ -2,6 +2,7 @@
 @import "./pages/homepage";
 @import "./pages/apartment";
 @import "./pages/notFound";
+@import "./pages/about";
 
 li {
     list-style-type: none;
@@ -47,4 +48,52 @@ footer {
     gap: $S;
     background: $DARK;
     color: $LIGHT;
+}
+.dropdownContainer {
+    width: 100%;
+    display: flex;
+    gap: 76px;
+
+    .dropdown {
+        flex: 1;
+        overflow: hidden;
+        margin-bottom: 50px;
+
+        &__title {
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: $ACCENT;
+            padding: 10px;
+            padding-right: 20px;
+
+            p {
+                color: $LIGHT;
+                font-size: 18px;
+                font-weight: 500;
+            }
+
+            img {
+                width: 32px;
+                transition: transform 0.3s ease;
+            }
+        }
+        &__contentContainer {
+            overflow: hidden;
+            position: relative;
+
+            .content {
+                height: fit-content;
+                background: $GRAY;
+                padding: 20px;
+                color: $ACCENT;
+                font-size: 18px;
+                font-weight: 400;
+                border-radius: 10px 10px 5px 5px;
+                transition: transform 0.3s ease;
+            }
+        }
+    }
 }

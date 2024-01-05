@@ -8,6 +8,7 @@ import beach from "../assets/images/beach.png";
 // Import du JSON
 import data from "../assets/logements.json";
 import Footer from "../components/Footer";
+import Appartement from "../components/Appartement";
 
 export default function Homepage() {
     return (
@@ -20,7 +21,10 @@ export default function Homepage() {
                 </div>
                 <section className="logements">
                     {data.map((appartement, index) => (
-                        <Link className="logements__item" key={index} to={"/"}>
+                        <Link
+                            className="logements__item"
+                            key={index}
+                            to={`/apartment/${appartement.id}`}>
                             <img
                                 src={appartement.cover}
                                 alt={`${appartement.title}'s cover picture`}
@@ -30,6 +34,18 @@ export default function Homepage() {
                     ))}
                 </section>
             </main>
+            {data.map((item, index) => (
+                <Appartement
+                    key={index}
+                    id={item.id}
+                    pictures={item.pictures}
+                    location={item.location}
+                    title={item.title}
+                    host={item.host}
+                    tags={item.tags}
+                    rating={item.rating}
+                />
+            ))}
             <Footer />
         </>
     );

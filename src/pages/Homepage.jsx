@@ -44,6 +44,8 @@ export default function Homepage() {
                     host={item.host}
                     tags={item.tags}
                     rating={item.rating}
+                    description={item.description}
+                    equipments={item.equipments}
                 />
             ))}
             <Footer />

@@ -4,21 +4,25 @@ import Footer from "./Footer";
 
 // Import svg flèche
 import arrow from "../assets/images/arrow.svg";
+import Dropdown from "./Dropdown";
 
 export default function Appartement({
+    id,
     pictures,
     title,
     location,
     host,
     tags,
     rating,
+    description,
+    equipments,
 }) {
-    const [imageDisplayed, setImageDisplayed] = useState(0);
-
     return (
         <>
             <Navbar />
             <main id="apartment">
+                {/* CREACTION DU CAROUSEL */}
+
                 <section className="carousel">
                     <img className="arrow left" src={arrow} alt="Left arrow" />
                     <img
@@ -26,8 +30,6 @@ export default function Appartement({
                         src={arrow}
                         alt="Right arrow"
                     />
-
-                    {/* Création du carousel */}
 
                     {pictures.map((image, index) => (
                         <figure key={index}>
@@ -42,7 +44,8 @@ export default function Appartement({
                     ))}
                 </section>
 
-                {/* Création des infos de l'appart */}
+                {/* FIN DU CAROUSEL */}
+                {/* CREATION DES INFOS */}
 
                 <section className="infos">
                     <div className="infos__titleAndName">
@@ -70,7 +73,13 @@ export default function Appartement({
                     </div>
                 </section>
 
-                {/* Création des dropdowns */}
+                {/* FIN DES INFOS */}
+                {/* AFFICHAGE DES DROPDOWNS */}
+
+                <Dropdown title={"Description"} options={description} />
+                <Dropdown title={"Équipements"} options={equipments} />
+
+                {/* FIN DES DROPDOWNS */}
             </main>
             <Footer />
         </>

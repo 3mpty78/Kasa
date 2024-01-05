@@ -24,8 +24,19 @@ export default function Dropdown({ title, options }) {
                     alt="Toggle dropdown icon"
                 />
             </div>
-            {isOpen && (
-                <div className="dropdown__content">
+
+            <div className="dropdown__contentContainer">
+                <div
+                    style={
+                        !isOpen
+                            ? {
+                                  transform: "translateY(-100%)",
+                              }
+                            : {
+                                  transform: "translateY(0)",
+                              }
+                    }
+                    className="content">
                     {Array.isArray(options) ? (
                         <ul>
                             {options.map((option, index) => (
@@ -36,7 +47,7 @@ export default function Dropdown({ title, options }) {
                         <p>{options}</p>
                     )}
                 </div>
-            )}
+            </div>
         </div>
     );
 }

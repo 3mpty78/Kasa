@@ -17,6 +17,7 @@
 
         img {
             width: 80px;
+            cursor: pointer;
         }
 
         .right {
@@ -118,11 +119,12 @@
 
     .dropdown {
         flex: 1;
+        overflow: hidden;
         margin-bottom: 50px;
 
         &__title {
             border-radius: 5px;
-
+            cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -141,13 +143,21 @@
                 transition: transform 0.3s ease;
             }
         }
-        &__content {
-            background: $GRAY;
-            padding: 20px;
-            color: $ACCENT;
-            font-size: 18px;
-            font-weight: 400;
-            border-radius: 10px 10px 5px 5px;
+        &__contentContainer {
+            overflow: hidden;
+            position: relative;
+            height: fit-content;
+
+            .content {
+                height: fit-content;
+                background: $GRAY;
+                padding: 20px;
+                color: $ACCENT;
+                font-size: 18px;
+                font-weight: 400;
+                border-radius: 10px 10px 5px 5px;
+                transition: transform 0.3s ease;
+            }
         }
     }
 }

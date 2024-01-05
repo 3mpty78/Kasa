@@ -1,0 +1,28 @@
+@import "../lib";
+
+#notFound {
+    .content {
+        padding: 139px 0;
+        width: 100%;
+        @include colCenter();
+        gap: 139px;
+
+        h1 {
+            font-size: 288px;
+            color: $ACCENT;
+            font-weight: 700;
+        }
+        h2 {
+            font-size: 36px;
+            color: $ACCENT;
+            font-weight: 500;
+        }
+        a {
+            color: $ACCENT;
+            font-size: 18px;
+            font-weight: 500;
+            text-decoration: underline;
+            text-underline-position: under;
+        }
+    }
+}

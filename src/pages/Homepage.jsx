@@ -8,7 +8,7 @@ import beach from "../assets/images/beach.png";
 // Import du JSON
 import data from "../assets/logements.json";
 import Footer from "../components/Footer";
-import Appartement from "../components/Appartement";
+import Appartement from "../components/Apartment";
 
 export default function Homepage() {
     return (

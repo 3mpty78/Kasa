@@ -7,7 +7,6 @@ import arrow from "../assets/images/arrow.svg";
 import Dropdown from "./Dropdown";
 
 export default function Appartement({
-    id,
     pictures,
     title,
     location,

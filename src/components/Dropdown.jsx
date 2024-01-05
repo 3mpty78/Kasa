@@ -14,7 +14,15 @@ export default function Dropdown({ title, options }) {
         <div className="dropdown">
             <div onClick={toggleDropdown} className="dropdown__title">
                 <p>{title}</p>
-                <img src={icon} alt="Toggle dropdown icon" />
+                <img
+                    style={
+                        isOpen
+                            ? { transform: "rotate(-90deg)" }
+                            : { transform: "rotate(90deg)" }
+                    }
+                    src={icon}
+                    alt="Toggle dropdown icon"
+                />
             </div>
             {isOpen && (
                 <div className="dropdown__content">

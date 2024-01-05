@@ -32,23 +32,25 @@ export default function Appartement({
 
     return (
         <>
-            <Navbar />
             <main id="apartment">
+                <Navbar />
                 {/* CREACTION DU CAROUSEL */}
 
                 <section className="carousel">
-                    <img
-                        onClick={previousSlide}
-                        className="arrow left"
-                        src={arrow}
-                        alt="Left arrow"
-                    />
-                    <img
-                        onClick={nextSlide}
-                        className="arrow right"
-                        src={arrow}
-                        alt="Right arrow"
-                    />
+                    <div className="arrows">
+                        <img
+                            onClick={previousSlide}
+                            className="arrow left"
+                            src={arrow}
+                            alt="Left arrow"
+                        />
+                        <img
+                            onClick={nextSlide}
+                            className="arrow right"
+                            src={arrow}
+                            alt="Right arrow"
+                        />
+                    </div>
 
                     {pictures.map((image, index) => (
                         <figure
@@ -61,11 +63,11 @@ export default function Appartement({
                                 src={image}
                                 alt={`Preview image number ${index + 1}`}
                             />
-                            <figcaption>
-                                {`${index + 1}/` + pictures.length}
-                            </figcaption>
                         </figure>
                     ))}
+                    <p>
+                        {currentIndex + 1}/{pictures.length}
+                    </p>
                 </section>
 
                 {/* FIN DU CAROUSEL */}
@@ -73,11 +75,11 @@ export default function Appartement({
 
                 <section className="infos">
                     <div className="infos__titleAndName">
-                        <div className="infos__titleAndLocation">
+                        <div className="titleAndLocation">
                             <h3>{title}</h3>
                             <p>{location}</p>
                         </div>
-                        <div className="infos__nameAndPic">
+                        <div className="nameAndPic">
                             <p>{host.name}</p>
                             <img
                                 src={host.picture}
@@ -99,9 +101,10 @@ export default function Appartement({
 
                 {/* FIN DES INFOS */}
                 {/* AFFICHAGE DES DROPDOWNS */}
-
-                <Dropdown title={"Description"} options={description} />
-                <Dropdown title={"Équipements"} options={equipments} />
+                <div className="dropdownContainer">
+                    <Dropdown title={"Description"} options={description} />
+                    <Dropdown title={"Équipements"} options={equipments} />
+                </div>
 
                 {/* FIN DES DROPDOWNS */}
             </main>

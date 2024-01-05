@@ -1,0 +1,153 @@
+@import "../lib";
+
+.carousel {
+    width: 100%;
+    height: 50vh;
+    position: relative;
+    padding: 0 $S;
+    border-radius: 25px;
+    overflow: hidden;
+    @include rowCenter();
+
+    .arrows {
+        @include rowCenter();
+        @include fullSize();
+        justify-content: space-between;
+        z-index: 1;
+
+        img {
+            width: 80px;
+        }
+
+        .right {
+            transform: rotate(180deg);
+        }
+    }
+
+    figure {
+        @include fullSize();
+        position: absolute;
+
+        img {
+            @include fullSize();
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+    p {
+        position: absolute;
+        bottom: $S;
+        font-size: 18px;
+        color: $LIGHT;
+    }
+}
+
+.infos {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2 1fr);
+    grid-template-rows: auto;
+    row-gap: 20px;
+
+    &__titleAndName {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+
+        .titleAndLocation {
+            display: flex;
+            flex-direction: column;
+
+            h3 {
+                font-size: 36px;
+                color: $ACCENT;
+                font-weight: 500;
+            }
+            p {
+                color: $ACCENT;
+                font-size: 20px;
+                font-weight: 500;
+            }
+        }
+
+        .nameAndPic {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 10px;
+
+            p {
+                width: 40%;
+                color: $ACCENT;
+                text-align: right;
+                font-size: 20px;
+                font-weight: 500;
+            }
+
+            img {
+                border-radius: 100%;
+                width: $L;
+            }
+        }
+    }
+
+    &__tagsAndRating {
+        display: flex;
+
+        .tags {
+            display: flex;
+            gap: 10px;
+
+            p {
+                background: $ACCENT;
+                color: $LIGHT;
+                font-size: 14px;
+                padding: 5px $M;
+                border-radius: 10px;
+                font-weight: 500;
+                text-align: center;
+            }
+        }
+    }
+}
+
+.dropdownContainer {
+    width: 100%;
+    display: flex;
+    gap: 76px;
+
+    .dropdown {
+        flex: 1;
+        margin-bottom: 50px;
+
+        &__title {
+            border-radius: 5px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: $ACCENT;
+            padding: 10px;
+            padding-right: 20px;
+
+            p {
+                color: $LIGHT;
+                font-size: 18px;
+                font-weight: 500;
+            }
+
+            img {
+                width: 32px;
+                transition: transform 0.3s ease;
+            }
+        }
+        &__content {
+            background: $GRAY;
+            padding: 20px;
+            color: $ACCENT;
+            font-size: 18px;
+            font-weight: 400;
+            border-radius: 10px 10px 5px 5px;
+        }
+    }
+}

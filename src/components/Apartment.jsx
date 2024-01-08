@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import Dropdown from "./Dropdown";
 
 // Import svg flèche
 import arrow from "../assets/images/arrow.svg";
-import Dropdown from "./Dropdown";
 
 export default function Appartement({
     pictures,
@@ -101,10 +101,10 @@ export default function Appartement({
 
                 {/* FIN DES INFOS */}
                 {/* AFFICHAGE DES DROPDOWNS */}
-                <div className="dropdownContainer">
+                <section className="dropdownContainer">
                     <Dropdown title={"Description"} options={description} />
                     <Dropdown title={"Équipements"} options={equipments} />
-                </div>
+                </section>
 
                 {/* FIN DES DROPDOWNS */}
             </main>

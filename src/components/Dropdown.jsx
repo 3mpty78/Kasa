@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 // Import de l'icon du toggle
 import icon from "../assets/images/arrow.svg";

@@ -3,8 +3,10 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import Dropdown from "./Dropdown";
 
-// Import svg flèche
+// Import svg flèche et étoiles
 import arrow from "../assets/images/arrow.svg";
+import redStar from "../assets/images/star-active.svg";
+import grayStar from "../assets/images/star-inactive.svg";
 
 export default function Appartement({
     pictures,
@@ -18,17 +20,49 @@ export default function Appartement({
 }) {
     const [currentIndex, setIndex] = useState(0);
 
-    function nextSlide() {
+    const nextSlide = () => {
         setIndex((previousIndex) =>
             previousIndex === pictures.length - 1 ? 0 : previousIndex + 1
         );
-    }
+    };
 
-    function previousSlide() {
+    const previousSlide = () => {
         setIndex((previousIndex) =>
             previousIndex === 0 ? pictures.length - 1 : previousIndex - 1
         );
-    }
+    };
+
+    const ratingNumber = parseInt(rating);
+
+    const stars = Array.from({ length: 5 }, (_, index) => {
+        let starColor;
+
+        if (index < ratingNumber) {
+            starColor = "red";
+        } else {
+            starColor = "gray";
+        }
+
+        let starSvg;
+        switch (starColor) {
+            case "red":
+                starSvg = redStar;
+                break;
+            case "gray":
+                starSvg = grayStar;
+                break;
+            default:
+                starSvg = grayStar;
+        }
+
+        return (
+            <span
+                key={index}
+                className={index < ratingNumber ? "star active" : "star"}>
+                <img src={starSvg} alt={`Star ${index + 1}`} />
+            </span>
+        );
+    });
 
     return (
         <>
@@ -93,9 +127,7 @@ export default function Appartement({
                                 <p key={index}>{tag}</p>
                             ))}
                         </div>
-                        <div className="rating">
-                            <p>{rating}/5</p>
-                        </div>
+                        <div className="rating">{stars}</div>
                     </div>
                 </section>
 

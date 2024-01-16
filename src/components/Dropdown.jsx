@@ -25,7 +25,9 @@ export default function Dropdown({ title, options }) {
                 />
             </div>
 
-            <div className="dropdown__contentContainer">
+            <div
+                className="dropdown__contentContainer"
+                style={!isOpen ? { height: "0" } : { height: "auto" }}>
                 <div
                     style={
                         !isOpen

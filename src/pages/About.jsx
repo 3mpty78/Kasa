@@ -8,7 +8,7 @@ import mountain from "../assets/images/mountain.png";
 
 export default function About() {
     return (
-        <>
+        <div className="aboutContainer">
             <main id="about">
                 <Navbar />
                 <img
@@ -44,6 +44,6 @@ export default function About() {
                 </div>
             </main>
             <Footer />
-        </>
+        </div>
     );
 }

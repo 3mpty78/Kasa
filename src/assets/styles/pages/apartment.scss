@@ -3,12 +3,8 @@
 .apartmentContainer {
     position: relative;
     min-height: 100vh;
-
-    footer {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-    }
+    @include colCenter();
+    justify-content: space-between;
 }
 
 #apartment {

@@ -53,7 +53,8 @@ footer {
 .dropdownContainer {
     width: 100%;
     display: flex;
-    gap: 76px;
+    gap: 100px;
+    transition: 0.3s ease;
 
     .dropdown {
         flex: 1;

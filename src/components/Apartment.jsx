@@ -65,7 +65,7 @@ export default function Appartement({
     });
 
     return (
-        <>
+        <div className="apartmentContainer">
             <main id="apartment">
                 <Navbar />
                 {/* CREACTION DU CAROUSEL */}
@@ -141,6 +141,6 @@ export default function Appartement({
                 {/* FIN DES DROPDOWNS */}
             </main>
             <Footer />
-        </>
+        </div>
     );
 }

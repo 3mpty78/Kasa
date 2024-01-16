@@ -13,11 +13,12 @@ a {
 }
 main {
     position: relative;
-    padding: $M $L 0;
+    padding: 0 100px;
     @include colCenter();
     gap: $M;
 }
 header {
+    margin-top: 45px;
     width: 100%;
     @include rowCenter();
     justify-content: space-between;

@@ -17,6 +17,11 @@
         overflow: hidden;
         @include rowCenter();
 
+        @media screen and (max-width: 700px) {
+            height: 255px;
+            padding: 0 10px;
+        }
+
         .arrows {
             @include rowCenter();
             @include fullSize();
@@ -26,6 +31,10 @@
             img {
                 width: 80px;
                 cursor: pointer;
+
+                @media screen and (max-width: 700px) {
+                    width: 24px;
+                }
             }
 
             .right {
@@ -48,20 +57,32 @@
             bottom: $S;
             font-size: 18px;
             color: $LIGHT;
+
+            @media screen and (max-width: 700px) {
+                visibility: hidden;
+            }
         }
     }
 
     .infos {
         width: 100%;
         display: grid;
-        grid-template-columns: repeat(2 1fr);
+        grid-template-columns: repeat(2, 1fr);
         grid-template-rows: auto;
         row-gap: 20px;
 
-        &__titleAndName {
+        @media screen and (max-width: 700px) {
+            grid-template-columns: 1fr;
+        }
+
+        &__titleAndTags {
             display: flex;
-            width: 100%;
+            flex-direction: column;
             justify-content: space-between;
+
+            @media screen and (max-width: 700px) {
+                gap: 10px;
+            }
 
             .titleAndLocation {
                 display: flex;
@@ -71,11 +92,60 @@
                     font-size: 36px;
                     color: $ACCENT;
                     font-weight: 500;
+
+                    @media screen and (max-width: 700px) {
+                        font-size: 18px;
+                    }
                 }
                 p {
                     color: $ACCENT;
                     font-size: 20px;
                     font-weight: 500;
+
+                    @media screen and (max-width: 700px) {
+                        font-size: 14px;
+                    }
+                }
+            }
+
+            .tags {
+                display: flex;
+                gap: 10px;
+
+                p {
+                    background: $ACCENT;
+                    color: $LIGHT;
+                    font-size: 14px;
+                    padding: 5px $M;
+                    border-radius: 10px;
+                    font-weight: 500;
+                    text-align: center;
+                    display: flex;
+                    align-items: center;
+
+                    @media screen and (max-width: 700px) {
+                        font-size: 10px;
+                        padding: 5px $S;
+                    }
+                }
+            }
+        }
+
+        &__nameAndRating {
+            display: flex;
+            flex-direction: column-reverse;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: $S;
+
+            @media screen and (max-width: 700px) {
+                flex-direction: row;
+                align-items: center;
+            }
+
+            .star img {
+                @media screen and (max-width: 700px) {
+                    width: $S;
                 }
             }
 
@@ -91,32 +161,19 @@
                     text-align: right;
                     font-size: 20px;
                     font-weight: 500;
+
+                    @media screen and (max-width: 700px) {
+                        font-size: 12px;
+                    }
                 }
 
                 img {
                     border-radius: 100%;
-                    width: $L;
-                }
-            }
-        }
+                    width: 64px;
 
-        &__tagsAndRating {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            .tags {
-                display: flex;
-                gap: 10px;
-
-                p {
-                    background: $ACCENT;
-                    color: $LIGHT;
-                    font-size: 14px;
-                    padding: 5px $M;
-                    border-radius: 10px;
-                    font-weight: 500;
-                    text-align: center;
+                    @media screen and (max-width: 700px) {
+                        width: 32px;
+                    }
                 }
             }
         }

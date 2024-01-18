@@ -108,11 +108,19 @@ export default function Appartement({
                 {/* CREATION DES INFOS */}
 
                 <section className="infos">
-                    <div className="infos__titleAndName">
+                    <div className="infos__titleAndTags">
                         <div className="titleAndLocation">
                             <h3>{title}</h3>
                             <p>{location}</p>
                         </div>
+                        <div className="tags">
+                            {tags.map((tag, index) => (
+                                <p key={index}>{tag}</p>
+                            ))}
+                        </div>
+                    </div>
+                    <div className="infos__nameAndRating">
+                        <div className="rating">{stars}</div>
                         <div className="nameAndPic">
                             <p>{host.name}</p>
                             <img
@@ -120,14 +128,6 @@ export default function Appartement({
                                 alt={`${host.name}'s picture`}
                             />
                         </div>
-                    </div>
-                    <div className="infos__tagsAndRating">
-                        <div className="tags">
-                            {tags.map((tag, index) => (
-                                <p key={index}>{tag}</p>
-                            ))}
-                        </div>
-                        <div className="rating">{stars}</div>
                     </div>
                 </section>
 

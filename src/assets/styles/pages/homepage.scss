@@ -65,6 +65,11 @@
             align-items: flex-end;
             position: relative;
 
+            @media screen and (max-width: 700px) {
+                aspect-ratio: unset;
+                height: 255px;
+            }
+
             &:hover img {
                 transform: scale(1.5);
             }

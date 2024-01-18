@@ -9,6 +9,12 @@
         overflow: hidden;
         @include colCenter();
 
+        @media screen and (max-width: 700px) {
+            height: 110px;
+            padding: 0 15px;
+            border-radius: 10px;
+        }
+
         img {
             position: absolute;
             @include fullSize();
@@ -20,6 +26,11 @@
             z-index: 1;
             font-size: 48px;
             color: $LIGHT;
+
+            @media screen and (max-width: 700px) {
+                font-size: 24px;
+                text-wrap: balance;
+            }
         }
     }
 
@@ -33,6 +44,14 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: $M;
+
+        @media screen and (max-width: 700px) {
+            grid-template-columns: 1fr;
+            background: transparent;
+            padding: 0;
+            gap: $S;
+            margin-bottom: $S;
+        }
 
         &__item {
             aspect-ratio: 1/1;

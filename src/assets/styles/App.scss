@@ -16,6 +16,11 @@ main {
     padding: 0 100px;
     @include colCenter();
     gap: $M;
+
+    @media screen and (max-width: 700px) {
+        padding: 0 20px;
+        gap: $S;
+    }
 }
 header {
     margin-top: 45px;
@@ -23,16 +28,30 @@ header {
     @include rowCenter();
     justify-content: space-between;
 
+    img {
+        @media screen and (max-width: 700px) {
+            width: 145px;
+        }
+    }
+
     nav ul {
         display: flex;
         align-items: center;
         justify-content: space-between;
         gap: $M;
 
+        @media screen and (max-width: 700px) {
+            gap: $S;
+        }
+
         a {
             color: $ACCENT;
             font-size: 24px;
             font-weight: 500;
+
+            @media screen and (max-width: 700px) {
+                font-size: 12px;
+            }
 
             &:hover {
                 text-decoration: underline;
@@ -49,7 +68,23 @@ footer {
     gap: $S;
     background: $DARK;
     color: $LIGHT;
+
+    img {
+        @media screen and (max-width: 700px) {
+            width: 122px;
+        }
+    }
+
+    p {
+        @media screen and (max-width: 700px) {
+            font-size: 12px;
+            width: 50%;
+            text-align: center;
+            text-wrap: balance;
+        }
+    }
 }
+
 .dropdownContainer {
     width: 100%;
     display: flex;

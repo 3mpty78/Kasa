@@ -21,6 +21,7 @@ export default function Homepage() {
                 <section className="logements">
                     {data.map((appartement, index) => (
                         <Link
+                            target="_top"
                             className="logements__item"
                             key={index}
                             to={`/apartment/${appartement.id}`}>

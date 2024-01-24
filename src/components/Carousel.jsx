@@ -18,7 +18,9 @@ export default function Carousel({ pictures }) {
 
     return (
         <section className="carousel">
-            <div className="arrows">
+            <div
+                className="arrows"
+                style={pictures.length <= 1 ? { display: "none" } : {}}>
                 <img
                     onClick={previousSlide}
                     className="arrow left"
@@ -45,7 +47,7 @@ export default function Carousel({ pictures }) {
                     />
                 </figure>
             ))}
-            <p>
+            <p style={pictures.length <= 1 ? { display: "none" } : {}}>
                 {currentIndex + 1}/{pictures.length}
             </p>
         </section>

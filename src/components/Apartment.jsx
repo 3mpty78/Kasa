@@ -4,9 +4,9 @@ import Footer from "./Footer";
 import Dropdown from "./Dropdown";
 
 // Import svg flèche et étoiles
-import arrow from "../assets/images/arrow.svg";
 import redStar from "../assets/images/star-active.svg";
 import grayStar from "../assets/images/star-inactive.svg";
+import Carousel from "./Carousel";
 
 export default function Appartement({
     pictures,
@@ -18,20 +18,6 @@ export default function Appartement({
     description,
     equipments,
 }) {
-    const [currentIndex, setIndex] = useState(0);
-
-    const nextSlide = () => {
-        setIndex((previousIndex) =>
-            previousIndex === pictures.length - 1 ? 0 : previousIndex + 1
-        );
-    };
-
-    const previousSlide = () => {
-        setIndex((previousIndex) =>
-            previousIndex === 0 ? pictures.length - 1 : previousIndex - 1
-        );
-    };
-
     const ratingNumber = parseInt(rating);
 
     const stars = Array.from({ length: 5 }, (_, index) => {
@@ -68,43 +54,7 @@ export default function Appartement({
         <div className="apartmentContainer">
             <main id="apartment">
                 <Navbar />
-                {/* CREACTION DU CAROUSEL */}
-
-                <section className="carousel">
-                    <div className="arrows">
-                        <img
-                            onClick={previousSlide}
-                            className="arrow left"
-                            src={arrow}
-                            alt="Left arrow"
-                        />
-                        <img
-                            onClick={nextSlide}
-                            className="arrow right"
-                            src={arrow}
-                            alt="Right arrow"
-                        />
-                    </div>
-
-                    {pictures.map((image, index) => (
-                        <figure
-                            key={index}
-                            style={{
-                                display:
-                                    index === currentIndex ? "block" : "none",
-                            }}>
-                            <img
-                                src={image}
-                                alt={`Preview image number ${index + 1}`}
-                            />
-                        </figure>
-                    ))}
-                    <p>
-                        {currentIndex + 1}/{pictures.length}
-                    </p>
-                </section>
-
-                {/* FIN DU CAROUSEL */}
+                <Carousel pictures={pictures} />
                 {/* CREATION DES INFOS */}
 
                 <section className="infos">

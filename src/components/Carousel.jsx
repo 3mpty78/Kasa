@@ -5,14 +5,14 @@ export default function Carousel({ pictures }) {
     const [currentIndex, setIndex] = useState(0);
 
     const nextSlide = () => {
-        setIndex((previousIndex) =>
-            previousIndex === pictures.length - 1 ? 0 : previousIndex + 1
+        setIndex((currentValue) =>
+            currentValue === pictures.length - 1 ? 0 : currentValue + 1
         );
     };
 
     const previousSlide = () => {
-        setIndex((previousIndex) =>
-            previousIndex === 0 ? pictures.length - 1 : previousIndex - 1
+        setIndex((currentValue) =>
+            currentValue === 0 ? pictures.length - 1 : currentValue - 1
         );
     };
 

@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import { Link } from "react-router-dom";
+import "../assets/styles/app.scss";
 
 // Import de l'image de bannière
 import beach from "../assets/images/beach.png";

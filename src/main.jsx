@@ -2,16 +2,16 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import App from "./App.jsx";
 import "./index.scss";
 import About from "./pages/About.jsx";
 import NotFound from "./pages/NotFound.jsx";
 import ApartmentInfos from "./pages/ApartmentInfos.jsx";
+import Homepage from "./pages/Homepage.jsx";
 
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <App />,
+        element: <Homepage />,
     },
     {
         path: "/about",

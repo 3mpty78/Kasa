@@ -1,12 +1,11 @@
-import { useState } from "react";
 import Navbar from "./Navbar";
-import Footer from "./Footer";
+import Carousel from "./Carousel";
 import Dropdown from "./Dropdown";
+import Footer from "./Footer";
 
 // Import svg flèche et étoiles
 import redStar from "../assets/images/star-active.svg";
 import grayStar from "../assets/images/star-inactive.svg";
-import Carousel from "./Carousel";
 
 export default function Appartement({
     pictures,
@@ -21,25 +20,8 @@ export default function Appartement({
     const ratingNumber = parseInt(rating);
 
     const stars = Array.from({ length: 5 }, (_, index) => {
-        let starColor;
-
-        if (index < ratingNumber) {
-            starColor = "red";
-        } else {
-            starColor = "gray";
-        }
-
-        let starSvg;
-        switch (starColor) {
-            case "red":
-                starSvg = redStar;
-                break;
-            case "gray":
-                starSvg = grayStar;
-                break;
-            default:
-                starSvg = grayStar;
-        }
+        const starColor = index < ratingNumber ? "red" : "gray";
+        const starSvg = starColor === "red" ? redStar : grayStar;
 
         return (
             <span
@@ -55,8 +37,6 @@ export default function Appartement({
             <main id="apartment">
                 <Navbar />
                 <Carousel pictures={pictures} />
-                {/* CREATION DES INFOS */}
-
                 <section className="infos">
                     <div className="infos__titleAndTags">
                         <div className="titleAndLocation">
@@ -80,15 +60,10 @@ export default function Appartement({
                         </div>
                     </div>
                 </section>
-
-                {/* FIN DES INFOS */}
-                {/* AFFICHAGE DES DROPDOWNS */}
                 <section className="dropdownContainer">
                     <Dropdown title={"Description"} options={description} />
                     <Dropdown title={"Équipements"} options={equipments} />
                 </section>
-
-                {/* FIN DES DROPDOWNS */}
             </main>
             <Footer />
         </div>

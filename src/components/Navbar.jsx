@@ -27,7 +27,6 @@ export default function Navbar() {
                             <Link target="_top" to={link.path}>
                                 {link.name}
                             </Link>
-                            <div id="border"></div>
                         </li>
                     ))}
                 </ul>

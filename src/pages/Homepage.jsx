@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import { Link } from "react-router-dom";
+import Footer from "../components/Footer";
 import "../assets/styles/app.scss";
 
 // Import de l'image de bannière
@@ -8,7 +9,6 @@ import beach from "../assets/images/beach.png";
 
 // Import du JSON
 import data from "../assets/logements.json";
-import Footer from "../components/Footer";
 
 export default function Homepage() {
     return (
